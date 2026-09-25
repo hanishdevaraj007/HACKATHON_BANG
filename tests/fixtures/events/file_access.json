@@ -1,0 +1,51 @@
+{
+  "event_id": "11111111-2222-4333-8444-555555555510",
+  "timestamp": "2025-03-15T09:14:00Z",
+  "event_type": "file_access",
+  "source": {
+    "source_type": "endpoint_agent",
+    "source_id": "WS-Z1-01",
+    "source_name": "Workstation Z1-01"
+  },
+  "actor": {
+    "entity_type": "account",
+    "entity_id": "P001",
+    "entity_name": "Alice Chen",
+    "badge_id": "B-1001",
+    "account_id": "achen",
+    "track_id": null
+  },
+  "target": {
+    "entity_type": "file",
+    "entity_id": "FILE-RESEARCH-DOC",
+    "entity_name": "quantum_telemetry_v2.pdf"
+  },
+  "object": {
+    "object_type": "file",
+    "object_id": "FILE-RESEARCH-DOC",
+    "object_description": "Confidential research telemetry"
+  },
+  "device": {
+    "device_id": "WS-Z1-01",
+    "device_type": "workstation",
+    "device_name": "Workstation Z1-01",
+    "ip_address": "10.0.1.51",
+    "mac_address": "00:1A:2B:3C:4D:61"
+  },
+  "location": {
+    "zone_id": "Z1",
+    "zone_name": "Employee Offices",
+    "building": "Main Campus",
+    "floor": "1",
+    "coordinates": null
+  },
+  "attributes": {
+    "action": "copy",
+    "file_path": "C:\\Research\\quantum_telemetry_v2.pdf",
+    "destination": "E:\\quantum_telemetry_v2.pdf",
+    "file_size_bytes": 45210900,
+    "classification": "confidential"
+  },
+  "confidence": 1.0,
+  "raw_ref": "audit/file_access_audit_981.log"
+}

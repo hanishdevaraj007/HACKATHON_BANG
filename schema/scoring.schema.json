@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://meridian-security/schema/scoring.schema.json",
+  "title": "Scoring Contract",
+  "description": "FROZEN scoring model. Do NOT alter these values. See docs/INCIDENT_CONTRACT.md.",
+  "type": "object",
+  "required": ["rules", "max_score", "severity_bands"],
+  "properties": {
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["rule_id", "rule_name", "points", "description"],
+        "properties": {
+          "rule_id": { "type": "string" },
+          "rule_name": { "type": "string" },
+          "points": { "type": "integer" },
+          "description": { "type": "string" },
+          "signal_type": { "type": "string" }
+        }
+      }
+    },
+    "max_score": {
+      "type": "integer",
+      "const": 100
+    },
+    "severity_bands": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["label", "min", "max"],
+        "properties": {
+          "label": { "type": "string", "enum": ["LOW", "MEDIUM", "HIGH", "CRITICAL"] },
+          "min": { "type": "integer" },
+          "max": { "type": "integer" }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,422 @@
+{
+  "_comment": "Example normalized events for testing and contract validation. All are SYNTHETIC. See docs/EVENT_CONTRACT.md.",
+  "events": [
+    {
+      "event_id": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+      "timestamp": "2025-03-15T09:15:00Z",
+      "event_type": "person_enter",
+      "source": {
+        "source_type": "camera",
+        "source_id": "CAM-Z0-01",
+        "source_name": "Lobby Main Camera"
+      },
+      "actor": {
+        "entity_type": "person",
+        "entity_id": null,
+        "entity_name": null,
+        "badge_id": null,
+        "account_id": null,
+        "track_id": "TRK-20250315-001"
+      },
+      "target": {
+        "entity_type": "zone",
+        "entity_id": "Z0",
+        "entity_name": "Lobby / Reception"
+      },
+      "object": null,
+      "device": {
+        "device_id": "CAM-Z0-01",
+        "device_type": "camera",
+        "device_name": "Lobby Main Camera",
+        "ip_address": "10.0.0.10",
+        "mac_address": null
+      },
+      "location": {
+        "zone_id": "Z0",
+        "zone_name": "Lobby / Reception",
+        "building": "Main",
+        "floor": "1",
+        "coordinates": {"x": 120.5, "y": 45.2}
+      },
+      "attributes": {
+        "direction": "inbound",
+        "detection_class": "person",
+        "bbox": [100, 50, 200, 300]
+      },
+      "confidence": 0.87,
+      "raw_ref": "frames/20250315/cam-z0-01/frame_09150000.jpg"
+    },
+    {
+      "event_id": "b2c3d4e5-f6a7-4b8c-9d0e-1f2a3b4c5d6e",
+      "timestamp": "2025-03-15T09:45:30Z",
+      "event_type": "person_exit",
+      "source": {
+        "source_type": "camera",
+        "source_id": "CAM-Z1-01",
+        "source_name": "Office Corridor Camera"
+      },
+      "actor": {
+        "entity_type": "person",
+        "entity_id": "P002",
+        "entity_name": "Bob Martinez",
+        "badge_id": "B-1002",
+        "account_id": "bmartinez",
+        "track_id": "TRK-20250315-005"
+      },
+      "target": {
+        "entity_type": "zone",
+        "entity_id": "Z1",
+        "entity_name": "Employee Offices"
+      },
+      "object": null,
+      "device": {
+        "device_id": "CAM-Z1-01",
+        "device_type": "camera",
+        "device_name": "Office Corridor Camera",
+        "ip_address": "10.0.1.10",
+        "mac_address": null
+      },
+      "location": {
+        "zone_id": "Z1",
+        "zone_name": "Employee Offices",
+        "building": "Main",
+        "floor": "2",
+        "coordinates": null
+      },
+      "attributes": {
+        "direction": "outbound",
+        "detection_class": "person"
+      },
+      "confidence": 0.92,
+      "raw_ref": null
+    },
+    {
+      "event_id": "c3d4e5f6-a7b8-4c9d-8e1f-2a3b4c5d6e7f",
+      "timestamp": "2025-03-15T10:05:12Z",
+      "event_type": "object_place",
+      "source": {
+        "source_type": "camera",
+        "source_id": "CAM-Z2-01",
+        "source_name": "Collaboration Area Camera"
+      },
+      "actor": {
+        "entity_type": "person",
+        "entity_id": null,
+        "entity_name": null,
+        "badge_id": null,
+        "account_id": null,
+        "track_id": "TRK-20250315-008"
+      },
+      "target": {
+        "entity_type": "zone",
+        "entity_id": "Z2",
+        "entity_name": "Collaboration Area"
+      },
+      "object": {
+        "object_type": "bag",
+        "object_id": null,
+        "object_description": "Dark backpack placed near conference table"
+      },
+      "device": {
+        "device_id": "CAM-Z2-01",
+        "device_type": "camera",
+        "device_name": "Collaboration Area Camera",
+        "ip_address": "10.0.2.10",
+        "mac_address": null
+      },
+      "location": {
+        "zone_id": "Z2",
+        "zone_name": "Collaboration Area",
+        "building": "Main",
+        "floor": "2",
+        "coordinates": {"x": 200.0, "y": 150.3}
+      },
+      "attributes": {
+        "detection_class": "backpack",
+        "action": "placed",
+        "stationary_seconds": 0
+      },
+      "confidence": 0.75,
+      "raw_ref": "frames/20250315/cam-z2-01/frame_10051200.jpg"
+    },
+    {
+      "event_id": "d4e5f6a7-b8c9-4d0e-9f2a-3b4c5d6e7f80",
+      "timestamp": "2025-03-15T10:20:45Z",
+      "event_type": "object_pickup",
+      "source": {
+        "source_type": "camera",
+        "source_id": "CAM-Z2-01",
+        "source_name": "Collaboration Area Camera"
+      },
+      "actor": {
+        "entity_type": "person",
+        "entity_id": null,
+        "entity_name": null,
+        "badge_id": null,
+        "account_id": null,
+        "track_id": "TRK-20250315-008"
+      },
+      "target": null,
+      "object": {
+        "object_type": "bag",
+        "object_id": null,
+        "object_description": "Dark backpack picked up from conference table"
+      },
+      "device": {
+        "device_id": "CAM-Z2-01",
+        "device_type": "camera",
+        "device_name": "Collaboration Area Camera",
+        "ip_address": "10.0.2.10",
+        "mac_address": null
+      },
+      "location": {
+        "zone_id": "Z2",
+        "zone_name": "Collaboration Area",
+        "building": "Main",
+        "floor": "2",
+        "coordinates": {"x": 200.0, "y": 150.3}
+      },
+      "attributes": {
+        "detection_class": "backpack",
+        "action": "picked_up",
+        "stationary_seconds": 933
+      },
+      "confidence": 0.71,
+      "raw_ref": null
+    },
+    {
+      "event_id": "e5f6a7b8-c9d0-4e1f-aa3b-4c5d6e7f8091",
+      "timestamp": "2025-03-15T09:14:55Z",
+      "event_type": "badge_swipe",
+      "source": {
+        "source_type": "badge_reader",
+        "source_id": "BADGE-Z0-ENTRY",
+        "source_name": "Lobby Badge Reader"
+      },
+      "actor": {
+        "entity_type": "person",
+        "entity_id": "P001",
+        "entity_name": "Alice Chen",
+        "badge_id": "B-1001",
+        "account_id": "achen",
+        "track_id": null
+      },
+      "target": {
+        "entity_type": "door",
+        "entity_id": "DOOR-Z0-MAIN",
+        "entity_name": "Main Entrance"
+      },
+      "object": null,
+      "device": {
+        "device_id": "BADGE-Z0-ENTRY",
+        "device_type": "badge_reader",
+        "device_name": "Lobby Badge Reader",
+        "ip_address": "10.0.0.20",
+        "mac_address": null
+      },
+      "location": {
+        "zone_id": "Z0",
+        "zone_name": "Lobby / Reception",
+        "building": "Main",
+        "floor": "1",
+        "coordinates": null
+      },
+      "attributes": {
+        "access_result": "granted",
+        "auth_method": "badge"
+      },
+      "confidence": 1.0,
+      "raw_ref": null
+    },
+    {
+      "event_id": "f6a7b8c9-d0e1-4f2a-bb4c-5d6e7f809102",
+      "timestamp": "2025-03-15T09:30:10Z",
+      "event_type": "login_success",
+      "source": {
+        "source_type": "endpoint_agent",
+        "source_id": "WS-Z1-02",
+        "source_name": "Workstation Z1-02"
+      },
+      "actor": {
+        "entity_type": "account",
+        "entity_id": "P001",
+        "entity_name": "Alice Chen",
+        "badge_id": "B-1001",
+        "account_id": "achen",
+        "track_id": null
+      },
+      "target": {
+        "entity_type": "workstation",
+        "entity_id": "WS-Z1-02",
+        "entity_name": "Workstation Z1-02"
+      },
+      "object": null,
+      "device": {
+        "device_id": "WS-Z1-02",
+        "device_type": "workstation",
+        "device_name": "Workstation Z1-02",
+        "ip_address": "10.0.1.102",
+        "mac_address": "AA:BB:CC:DD:EE:02"
+      },
+      "location": {
+        "zone_id": "Z1",
+        "zone_name": "Employee Offices",
+        "building": "Main",
+        "floor": "2",
+        "coordinates": null
+      },
+      "attributes": {
+        "auth_method": "password+mfa",
+        "session_id": "sess-abc123"
+      },
+      "confidence": 1.0,
+      "raw_ref": null
+    },
+    {
+      "event_id": "07a8b9c0-d1e2-4f3a-8b5c-6d7e8f901213",
+      "timestamp": "2025-03-15T11:45:00Z",
+      "event_type": "usb_insert",
+      "source": {
+        "source_type": "endpoint_agent",
+        "source_id": "WS-Z3L-01",
+        "source_name": "Lab Workstation 01"
+      },
+      "actor": {
+        "entity_type": "account",
+        "entity_id": "P002",
+        "entity_name": "Bob Martinez",
+        "badge_id": "B-1002",
+        "account_id": "bmartinez",
+        "track_id": null
+      },
+      "target": {
+        "entity_type": "workstation",
+        "entity_id": "WS-Z3L-01",
+        "entity_name": "Lab Workstation 01"
+      },
+      "object": {
+        "object_type": "usb_device",
+        "object_id": "USB-SN-XYZ789",
+        "object_description": "32GB USB flash drive"
+      },
+      "device": {
+        "device_id": "WS-Z3L-01",
+        "device_type": "workstation",
+        "device_name": "Lab Workstation 01",
+        "ip_address": "10.0.3.101",
+        "mac_address": "AA:BB:CC:DD:EE:31"
+      },
+      "location": {
+        "zone_id": "Z3-LAB",
+        "zone_name": "R&D Laboratory",
+        "building": "Main",
+        "floor": "3",
+        "coordinates": null
+      },
+      "attributes": {
+        "usb_vendor": "SanDisk",
+        "usb_serial": "XYZ789",
+        "capacity_gb": 32
+      },
+      "confidence": 1.0,
+      "raw_ref": null
+    },
+    {
+      "event_id": "18b9c0d1-e2f3-4a4b-9c6d-7e8f90121324",
+      "timestamp": "2025-03-15T11:47:30Z",
+      "event_type": "file_access",
+      "source": {
+        "source_type": "endpoint_agent",
+        "source_id": "WS-Z3L-01",
+        "source_name": "Lab Workstation 01"
+      },
+      "actor": {
+        "entity_type": "account",
+        "entity_id": "P002",
+        "entity_name": "Bob Martinez",
+        "badge_id": "B-1002",
+        "account_id": "bmartinez",
+        "track_id": null
+      },
+      "target": {
+        "entity_type": "file",
+        "entity_id": "FILE-PROTO-DESIGN-v3",
+        "entity_name": "prototype_design_v3.pdf"
+      },
+      "object": null,
+      "device": {
+        "device_id": "WS-Z3L-01",
+        "device_type": "workstation",
+        "device_name": "Lab Workstation 01",
+        "ip_address": "10.0.3.101",
+        "mac_address": "AA:BB:CC:DD:EE:31"
+      },
+      "location": {
+        "zone_id": "Z3-LAB",
+        "zone_name": "R&D Laboratory",
+        "building": "Main",
+        "floor": "3",
+        "coordinates": null
+      },
+      "attributes": {
+        "action": "copy",
+        "file_path": "D:\\Research\\Prototypes\\prototype_design_v3.pdf",
+        "destination": "E:\\USB_DRIVE\\",
+        "file_size_bytes": 15728640,
+        "classification": "confidential"
+      },
+      "confidence": 1.0,
+      "raw_ref": null
+    },
+    {
+      "event_id": "29c0d1e2-f3a4-4b5c-ad7e-8f9012132435",
+      "timestamp": "2025-03-15T12:10:00Z",
+      "event_type": "network_transfer",
+      "source": {
+        "source_type": "network_monitor",
+        "source_id": "FW-CORE-01",
+        "source_name": "Core Firewall"
+      },
+      "actor": {
+        "entity_type": "device",
+        "entity_id": null,
+        "entity_name": null,
+        "badge_id": null,
+        "account_id": null,
+        "track_id": null
+      },
+      "target": {
+        "entity_type": "network_resource",
+        "entity_id": "EXT-IP-203.0.113.50",
+        "entity_name": "External endpoint 203.0.113.50"
+      },
+      "object": null,
+      "device": {
+        "device_id": "FW-CORE-01",
+        "device_type": "firewall",
+        "device_name": "Core Firewall",
+        "ip_address": "10.0.4.1",
+        "mac_address": null
+      },
+      "location": {
+        "zone_id": "Z4",
+        "zone_name": "Core Server Room",
+        "building": "Main",
+        "floor": "B1",
+        "coordinates": null
+      },
+      "attributes": {
+        "direction": "outbound",
+        "protocol": "HTTPS",
+        "source_ip": "10.0.3.101",
+        "destination_ip": "203.0.113.50",
+        "destination_port": 443,
+        "bytes_transferred": 524288000,
+        "duration_seconds": 120,
+        "transfer_label": "SYNTHETIC"
+      },
+      "confidence": 1.0,
+      "raw_ref": "pcap/20250315/session_12100000.pcap"
+    }
+  ]
+}

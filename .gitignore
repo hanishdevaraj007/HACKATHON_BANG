@@ -1,0 +1,69 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+*.egg
+dist/
+build/
+*.whl
+
+# Virtual environments
+venv/
+.venv/
+env/
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Secrets — NEVER commit these
+*.pem
+*.key
+.env.local
+.env.production
+secrets.json
+config/secrets/
+
+# Data — large files should not be committed
+data/raw/
+data/video/
+data/frames/
+*.mp4
+*.avi
+*.mkv
+*.mov
+
+# Model weights — download at runtime
+models/
+*.pt
+*.onnx
+*.weights
+
+# SQLite databases (generated at runtime)
+*.db
+*.sqlite
+*.sqlite3
+
+# Test artifacts
+.pytest_cache/
+htmlcov/
+.coverage
+coverage.xml
+
+# Logs
+logs/
+*.log
+
+# Node (frontend)
+node_modules/

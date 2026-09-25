@@ -1,0 +1,45 @@
+{
+  "event_id": "11111111-2222-4333-8444-555555555507",
+  "timestamp": "2025-03-15T09:10:00Z",
+  "event_type": "login_success",
+  "source": {
+    "source_type": "endpoint_agent",
+    "source_id": "WS-Z1-01",
+    "source_name": "Workstation Z1-01"
+  },
+  "actor": {
+    "entity_type": "account",
+    "entity_id": "P001",
+    "entity_name": "Alice Chen",
+    "badge_id": "B-1001",
+    "account_id": "achen",
+    "track_id": null
+  },
+  "target": {
+    "entity_type": "workstation",
+    "entity_id": "WS-Z1-01",
+    "entity_name": "Research Workstation 01"
+  },
+  "object": null,
+  "device": {
+    "device_id": "WS-Z1-01",
+    "device_type": "workstation",
+    "device_name": "Workstation Z1-01",
+    "ip_address": "10.0.1.51",
+    "mac_address": "00:1A:2B:3C:4D:61"
+  },
+  "location": {
+    "zone_id": "Z1",
+    "zone_name": "Employee Offices",
+    "building": "Main Campus",
+    "floor": "1",
+    "coordinates": null
+  },
+  "attributes": {
+    "auth_method": "password+mfa",
+    "session_id": "sess-9821a",
+    "logon_type": "interactive"
+  },
+  "confidence": 1.0,
+  "raw_ref": "winevt/security/event_4624_record_8921.evtx"
+}

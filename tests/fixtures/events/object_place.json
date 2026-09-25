@@ -1,0 +1,58 @@
+{
+  "event_id": "11111111-2222-4333-8444-555555555503",
+  "timestamp": "2025-03-15T09:02:00Z",
+  "event_type": "object_place",
+  "source": {
+    "source_type": "camera",
+    "source_id": "CAM-Z2-01",
+    "source_name": "Collaboration Area South"
+  },
+  "actor": {
+    "entity_type": "person",
+    "entity_id": "P001",
+    "entity_name": "Alice Chen",
+    "badge_id": "B-1001",
+    "account_id": "achen",
+    "track_id": "trk_101"
+  },
+  "target": {
+    "entity_type": "zone",
+    "entity_id": "Z2",
+    "entity_name": "Collaboration Area"
+  },
+  "object": {
+    "object_type": "bag",
+    "object_id": "BAG-001",
+    "object_description": "Black tactical backpack"
+  },
+  "device": {
+    "device_id": "CAM-Z2-01",
+    "device_type": "camera",
+    "device_name": "Collab Camera 01",
+    "ip_address": "10.0.2.10",
+    "mac_address": "00:1A:2B:3C:4D:21"
+  },
+  "location": {
+    "zone_id": "Z2",
+    "zone_name": "Collaboration Area",
+    "building": "Main Campus",
+    "floor": "1",
+    "coordinates": {
+      "x": 18.0,
+      "y": 14.2
+    }
+  },
+  "attributes": {
+    "detection_class": "backpack",
+    "action": "placed",
+    "bbox": [
+      150,
+      200,
+      210,
+      280
+    ],
+    "stationary_seconds": 0
+  },
+  "confidence": 0.88,
+  "raw_ref": "frames/cam_z2_01/frame_00180.jpg"
+}

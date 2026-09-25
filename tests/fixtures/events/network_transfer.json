@@ -1,0 +1,50 @@
+{
+  "event_id": "11111111-2222-4333-8444-555555555511",
+  "timestamp": "2025-03-15T09:16:00Z",
+  "event_type": "network_transfer",
+  "source": {
+    "source_type": "network_monitor",
+    "source_id": "FW-CORE-01",
+    "source_name": "Core Perimeter Firewall"
+  },
+  "actor": {
+    "entity_type": "account",
+    "entity_id": "P001",
+    "entity_name": "Alice Chen",
+    "badge_id": "B-1001",
+    "account_id": "achen",
+    "track_id": null
+  },
+  "target": {
+    "entity_type": "network_resource",
+    "entity_id": "EXT-DROPBOX",
+    "entity_name": "External Cloud Storage"
+  },
+  "object": null,
+  "device": {
+    "device_id": "FW-CORE-01",
+    "device_type": "firewall",
+    "device_name": "Perimeter Firewall",
+    "ip_address": "10.0.4.1",
+    "mac_address": "00:1A:2B:3C:4D:99"
+  },
+  "location": {
+    "zone_id": "Z4",
+    "zone_name": "Core Server Room",
+    "building": "Main Campus",
+    "floor": "1",
+    "coordinates": null
+  },
+  "attributes": {
+    "direction": "outbound",
+    "protocol": "HTTPS",
+    "source_ip": "10.0.1.51",
+    "destination_ip": "198.51.100.22",
+    "destination_port": 443,
+    "bytes_transferred": 524288000,
+    "duration_seconds": 45,
+    "transfer_label": "SYNTHETIC"
+  },
+  "confidence": 1.0,
+  "raw_ref": "netflow/flow_record_20250315_091600.json"
+}

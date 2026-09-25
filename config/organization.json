@@ -1,0 +1,443 @@
+{
+  "_comment": "Meridian Research Campus \u2014 Organization Configuration. This is a FICTIONAL configurable prototype.",
+  "organization": {
+    "name": "Meridian Research Campus",
+    "org_id": "meridian-rc-001",
+    "description": "Fictional research campus for security event correlation demonstration.",
+    "timezone": "UTC",
+    "business_hours": {
+      "start": "08:00",
+      "end": "18:00",
+      "days": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday"
+      ]
+    }
+  },
+  "roles": [
+    {
+      "role_id": "visitor",
+      "role_name": "Visitor",
+      "description": "External visitor with escort requirement.",
+      "max_zone_level": 0
+    },
+    {
+      "role_id": "employee",
+      "role_name": "Employee",
+      "description": "Standard employee with office access.",
+      "max_zone_level": 2
+    },
+    {
+      "role_id": "researcher",
+      "role_name": "Researcher",
+      "description": "R&D staff with lab access.",
+      "max_zone_level": 3
+    },
+    {
+      "role_id": "security_admin",
+      "role_name": "Security Administrator",
+      "description": "IT/security staff with full access.",
+      "max_zone_level": 4
+    },
+    {
+      "role_id": "executive",
+      "role_name": "Executive",
+      "description": "Senior leadership.",
+      "max_zone_level": 3
+    }
+  ],
+  "persons": [
+    {
+      "person_id": "P001",
+      "name": "Alice Chen",
+      "role": "researcher",
+      "badge_id": "B-1001",
+      "account_id": "achen",
+      "department": "R&D",
+      "active": true
+    },
+    {
+      "person_id": "P002",
+      "name": "Bob Martinez",
+      "role": "employee",
+      "badge_id": "B-1002",
+      "account_id": "bmartinez",
+      "department": "Engineering",
+      "active": true
+    },
+    {
+      "person_id": "P003",
+      "name": "Carol Okafor",
+      "role": "security_admin",
+      "badge_id": "B-1003",
+      "account_id": "cokafor",
+      "department": "IT Security",
+      "active": true
+    },
+    {
+      "person_id": "P004",
+      "name": "David Kim",
+      "role": "visitor",
+      "badge_id": "B-9001",
+      "account_id": null,
+      "department": null,
+      "active": true
+    },
+    {
+      "person_id": "P005",
+      "name": "Eva Johansson",
+      "role": "executive",
+      "badge_id": "B-1005",
+      "account_id": "ejohansson",
+      "department": "Leadership",
+      "active": true
+    }
+  ],
+  "devices": [
+    {
+      "device_id": "BADGE-Z0-ENTRY",
+      "device_type": "badge_reader",
+      "zone_id": "Z0",
+      "name": "Lobby Turnstile Inbound",
+      "ip_address": "10.0.0.20",
+      "mac_address": "00:1A:2B:3C:4D:10"
+    },
+    {
+      "device_id": "BADGE-Z0-EXIT",
+      "device_type": "badge_reader",
+      "zone_id": "Z0",
+      "name": "Lobby Turnstile Outbound",
+      "ip_address": "10.0.0.21",
+      "mac_address": "00:1A:2B:3C:4D:11"
+    },
+    {
+      "device_id": "BADGE-Z1-ENTRY",
+      "device_type": "badge_reader",
+      "zone_id": "Z1",
+      "name": "Office Wing Entry",
+      "ip_address": "10.0.1.20",
+      "mac_address": "00:1A:2B:3C:4D:20"
+    },
+    {
+      "device_id": "WS-Z1-01",
+      "device_type": "workstation",
+      "zone_id": "Z1",
+      "name": "Office Workstation 01",
+      "ip_address": "10.0.1.51",
+      "mac_address": "00:1A:2B:3C:4D:21"
+    },
+    {
+      "device_id": "WS-Z1-02",
+      "device_type": "workstation",
+      "zone_id": "Z1",
+      "name": "Office Workstation 02",
+      "ip_address": "10.0.1.52",
+      "mac_address": "00:1A:2B:3C:4D:22"
+    },
+    {
+      "device_id": "WS-Z1-03",
+      "device_type": "workstation",
+      "zone_id": "Z1",
+      "name": "Office Workstation 03",
+      "ip_address": "10.0.1.53",
+      "mac_address": "00:1A:2B:3C:4D:23"
+    },
+    {
+      "device_id": "BADGE-Z2-ENTRY",
+      "device_type": "badge_reader",
+      "zone_id": "Z2",
+      "name": "Collab Area Entry",
+      "ip_address": "10.0.2.20",
+      "mac_address": "00:1A:2B:3C:4D:30"
+    },
+    {
+      "device_id": "WS-Z2-01",
+      "device_type": "workstation",
+      "zone_id": "Z2",
+      "name": "Collab Terminal",
+      "ip_address": "10.0.2.51",
+      "mac_address": "00:1A:2B:3C:4D:31"
+    },
+    {
+      "device_id": "PROJ-Z2-01",
+      "device_type": "projector",
+      "zone_id": "Z2",
+      "name": "Collab Smart Display",
+      "ip_address": "10.0.2.80",
+      "mac_address": "00:1A:2B:3C:4D:32"
+    },
+    {
+      "device_id": "BADGE-Z3L-ENTRY",
+      "device_type": "badge_reader",
+      "zone_id": "Z3-LAB",
+      "name": "R&D Lab High Security Door",
+      "ip_address": "10.0.3.20",
+      "mac_address": "00:1A:2B:3C:4D:40"
+    },
+    {
+      "device_id": "WS-Z3L-01",
+      "device_type": "workstation",
+      "zone_id": "Z3-LAB",
+      "name": "R&D Lab Analysis Station",
+      "ip_address": "10.0.3.51",
+      "mac_address": "00:1A:2B:3C:4D:41"
+    },
+    {
+      "device_id": "WS-Z3L-02",
+      "device_type": "workstation",
+      "zone_id": "Z3-LAB",
+      "name": "R&D Lab CAD Station",
+      "ip_address": "10.0.3.52",
+      "mac_address": "00:1A:2B:3C:4D:42"
+    },
+    {
+      "device_id": "LAB-EQUIP-01",
+      "device_type": "lab_equipment",
+      "zone_id": "Z3-LAB",
+      "name": "Spectrometry Analyzer",
+      "ip_address": "10.0.3.90",
+      "mac_address": "00:1A:2B:3C:4D:43"
+    },
+    {
+      "device_id": "BADGE-Z3A-ENTRY",
+      "device_type": "badge_reader",
+      "zone_id": "Z3-ARCHIVE",
+      "name": "Archive Vault Entry",
+      "ip_address": "10.0.3.130",
+      "mac_address": "00:1A:2B:3C:4D:50"
+    },
+    {
+      "device_id": "STORAGE-Z3A-01",
+      "device_type": "storage_array",
+      "zone_id": "Z3-ARCHIVE",
+      "name": "Cold Storage Vault Array",
+      "ip_address": "10.0.3.140",
+      "mac_address": "00:1A:2B:3C:4D:51"
+    },
+    {
+      "device_id": "BADGE-Z4-ENTRY",
+      "device_type": "badge_reader",
+      "zone_id": "Z4",
+      "name": "Server Room Air-Lock Door",
+      "ip_address": "10.0.4.20",
+      "mac_address": "00:1A:2B:3C:4D:60"
+    },
+    {
+      "device_id": "SRV-CORE-01",
+      "device_type": "server",
+      "zone_id": "Z4",
+      "name": "Primary Database Server",
+      "ip_address": "10.0.4.10",
+      "mac_address": "00:1A:2B:3C:4D:61"
+    },
+    {
+      "device_id": "SRV-CORE-02",
+      "device_type": "server",
+      "zone_id": "Z4",
+      "name": "Backup Domain Controller",
+      "ip_address": "10.0.4.11",
+      "mac_address": "00:1A:2B:3C:4D:62"
+    },
+    {
+      "device_id": "SW-CORE-01",
+      "device_type": "switch",
+      "zone_id": "Z4",
+      "name": "Core Backbone Switch",
+      "ip_address": "10.0.4.2",
+      "mac_address": "00:1A:2B:3C:4D:63"
+    },
+    {
+      "device_id": "FW-CORE-01",
+      "device_type": "firewall",
+      "zone_id": "Z4",
+      "name": "Core Perimeter Firewall",
+      "ip_address": "10.0.4.1",
+      "mac_address": "00:1A:2B:3C:4D:64"
+    }
+  ],
+  "cameras": [
+    {
+      "camera_id": "CAM-Z0-01",
+      "zone_id": "Z0",
+      "name": "Lobby Main Entrance Cam"
+    },
+    {
+      "camera_id": "CAM-Z0-02",
+      "zone_id": "Z0",
+      "name": "Lobby Elevator Cam"
+    },
+    {
+      "camera_id": "CAM-Z1-01",
+      "zone_id": "Z1",
+      "name": "Offices Corridor North"
+    },
+    {
+      "camera_id": "CAM-Z1-02",
+      "zone_id": "Z1",
+      "name": "Offices Corridor South"
+    },
+    {
+      "camera_id": "CAM-Z1-03",
+      "zone_id": "Z1",
+      "name": "Offices Breakroom Cam"
+    },
+    {
+      "camera_id": "CAM-Z2-01",
+      "zone_id": "Z2",
+      "name": "Collaboration Area South"
+    },
+    {
+      "camera_id": "CAM-Z2-02",
+      "zone_id": "Z2",
+      "name": "Collaboration Area North"
+    },
+    {
+      "camera_id": "CAM-Z3L-01",
+      "zone_id": "Z3-LAB",
+      "name": "R&D Lab Bench 1 Cam"
+    },
+    {
+      "camera_id": "CAM-Z3L-02",
+      "zone_id": "Z3-LAB",
+      "name": "R&D Lab Clean Room Cam"
+    },
+    {
+      "camera_id": "CAM-Z3L-03",
+      "zone_id": "Z3-LAB",
+      "name": "R&D Lab Equipment Bay Cam"
+    },
+    {
+      "camera_id": "CAM-Z3A-01",
+      "zone_id": "Z3-ARCHIVE",
+      "name": "Archive Room Interior Cam"
+    },
+    {
+      "camera_id": "CAM-Z3A-02",
+      "zone_id": "Z3-ARCHIVE",
+      "name": "Archive Vault Door Cam"
+    },
+    {
+      "camera_id": "CAM-Z4-01",
+      "zone_id": "Z4",
+      "name": "Server Room Rack Row A"
+    },
+    {
+      "camera_id": "CAM-Z4-02",
+      "zone_id": "Z4",
+      "name": "Server Room Rack Row B"
+    },
+    {
+      "camera_id": "CAM-Z4-03",
+      "zone_id": "Z4",
+      "name": "Server Room Power & UPS Cam"
+    },
+    {
+      "camera_id": "CAM-Z4-04",
+      "zone_id": "Z4",
+      "name": "Server Room Air-Lock Cam"
+    }
+  ],
+  "assets": [
+    {
+      "asset_id": "ASSET-WS-POOL",
+      "zone_id": "Z1",
+      "name": "General Workstation Pool",
+      "classification": "internal"
+    },
+    {
+      "asset_id": "ASSET-CONF-DISPLAY",
+      "zone_id": "Z2",
+      "name": "Conference Presentation System",
+      "classification": "internal"
+    },
+    {
+      "asset_id": "ASSET-PROTOTYPE-A",
+      "zone_id": "Z3-LAB",
+      "name": "Quantum Sensor Prototype A",
+      "classification": "confidential"
+    },
+    {
+      "asset_id": "ASSET-RESEARCH-DATA",
+      "zone_id": "Z3-LAB",
+      "name": "R&D Proprietary Dataset",
+      "classification": "confidential"
+    },
+    {
+      "asset_id": "ASSET-CLASSIFIED-DOCS",
+      "zone_id": "Z3-ARCHIVE",
+      "name": "Physical Classified Archives",
+      "classification": "secret"
+    },
+    {
+      "asset_id": "ASSET-BACKUP-TAPES",
+      "zone_id": "Z3-ARCHIVE",
+      "name": "Campus Cold Backup Tapes",
+      "classification": "secret"
+    },
+    {
+      "asset_id": "ASSET-CORE-SERVERS",
+      "zone_id": "Z4",
+      "name": "Core Identity & Directory Servers",
+      "classification": "top_secret"
+    },
+    {
+      "asset_id": "ASSET-NETWORK-INFRA",
+      "zone_id": "Z4",
+      "name": "Backbone Routing Infrastructure",
+      "classification": "top_secret"
+    },
+    {
+      "asset_id": "ASSET-ENCRYPTION-KEYS",
+      "zone_id": "Z4",
+      "name": "HSM Root Encryption Keys",
+      "classification": "top_secret"
+    }
+  ],
+  "network_identities": [
+    {
+      "segment_id": "NET-Z0",
+      "zone_id": "Z0",
+      "subnet": "10.0.0.0/24",
+      "vlan": 10,
+      "description": "Public / Guest Segment"
+    },
+    {
+      "segment_id": "NET-Z1",
+      "zone_id": "Z1",
+      "subnet": "10.0.1.0/24",
+      "vlan": 20,
+      "description": "Corporate Office Segment"
+    },
+    {
+      "segment_id": "NET-Z2",
+      "zone_id": "Z2",
+      "subnet": "10.0.2.0/24",
+      "vlan": 30,
+      "description": "Collaboration Zone Segment"
+    },
+    {
+      "segment_id": "NET-Z3L",
+      "zone_id": "Z3-LAB",
+      "subnet": "10.0.3.0/24",
+      "vlan": 40,
+      "description": "R&D Lab Isolated Segment"
+    },
+    {
+      "segment_id": "NET-Z3A",
+      "zone_id": "Z3-ARCHIVE",
+      "subnet": "10.0.3.128/25",
+      "vlan": 45,
+      "description": "Data Vault Secure Segment"
+    },
+    {
+      "segment_id": "NET-Z4",
+      "zone_id": "Z4",
+      "subnet": "10.0.4.0/24",
+      "vlan": 50,
+      "description": "Critical Infrastructure Segment"
+    }
+  ]
+}

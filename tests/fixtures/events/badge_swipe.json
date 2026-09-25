@@ -1,0 +1,49 @@
+{
+  "event_id": "11111111-2222-4333-8444-555555555506",
+  "timestamp": "2025-03-15T09:00:15Z",
+  "event_type": "badge_swipe",
+  "source": {
+    "source_type": "badge_reader",
+    "source_id": "BADGE-Z0-ENTRY",
+    "source_name": "Lobby Turnstile North"
+  },
+  "actor": {
+    "entity_type": "person",
+    "entity_id": "P001",
+    "entity_name": "Alice Chen",
+    "badge_id": "B-1001",
+    "account_id": "achen",
+    "track_id": null
+  },
+  "target": {
+    "entity_type": "door",
+    "entity_id": "DOOR-Z0-01",
+    "entity_name": "Lobby North Gate"
+  },
+  "object": {
+    "object_type": "badge",
+    "object_id": "B-1001",
+    "object_description": "Employee RFID Badge"
+  },
+  "device": {
+    "device_id": "BADGE-Z0-ENTRY",
+    "device_type": "badge_reader",
+    "device_name": "Turnstile Reader 01",
+    "ip_address": "10.0.0.20",
+    "mac_address": "00:1A:2B:3C:4D:50"
+  },
+  "location": {
+    "zone_id": "Z0",
+    "zone_name": "Lobby / Reception",
+    "building": "Main Campus",
+    "floor": "1",
+    "coordinates": null
+  },
+  "attributes": {
+    "access_result": "granted",
+    "auth_method": "badge",
+    "reader_direction": "inbound"
+  },
+  "confidence": 1.0,
+  "raw_ref": "logs/access_control/2025-03-15.log#L104"
+}

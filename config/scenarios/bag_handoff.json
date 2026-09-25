@@ -1,0 +1,197 @@
+{
+  "scenario_id": "SCENARIO-BAG-HANDOFF-001",
+  "title": "Suspicious Physical Bag Handoff in Collaboration Area",
+  "description": "Ground-truth scenario definition for multi-person object exchange: Person A places a bag, the bag becomes unattended, and Person B retrieves and removes the bag.",
+  "classification": "PHYSICAL_ANOMALY",
+  "location": {
+    "zone_id": "Z2",
+    "zone_name": "Collaboration Area",
+    "camera_id": "CAM-Z2-01"
+  },
+  "entities": {
+    "person_a": {
+      "entity_id": "P001",
+      "name": "Alice Chen",
+      "role": "researcher",
+      "badge_id": "B-1001",
+      "track_id": "trk_101"
+    },
+    "person_b": {
+      "entity_id": "P002",
+      "name": "Bob Martinez",
+      "role": "employee",
+      "badge_id": "B-1002",
+      "track_id": "trk_202"
+    },
+    "object_01": {
+      "object_id": "BAG-001",
+      "object_type": "bag",
+      "description": "Black tactical backpack"
+    }
+  },
+  "expected_relationships": [
+    {
+      "source": "person_a",
+      "relation": "carried",
+      "target": "object_01"
+    },
+    {
+      "source": "person_a",
+      "relation": "placed",
+      "target": "object_01"
+    },
+    {
+      "source": "object_01",
+      "relation": "state_change",
+      "target": "unattended"
+    },
+    {
+      "source": "person_b",
+      "relation": "picked_up",
+      "target": "object_01"
+    },
+    {
+      "source": "person_b",
+      "relation": "removed",
+      "target": "object_01"
+    }
+  ],
+  "timeline": [
+    {
+      "step_index": 1,
+      "t_offset_sec": 0,
+      "action": "Person A enters",
+      "event_type": "person_enter",
+      "actor": "person_a",
+      "object": "object_01",
+      "details": {
+        "carrying": true,
+        "direction": "inbound",
+        "bbox": [
+          120,
+          80,
+          240,
+          360
+        ]
+      }
+    },
+    {
+      "step_index": 2,
+      "t_offset_sec": 15,
+      "action": "Person A carries backpack",
+      "event_type": "person_tracking",
+      "actor": "person_a",
+      "object": "object_01",
+      "details": {
+        "relation": "carried",
+        "bbox": [
+          130,
+          90,
+          250,
+          370
+        ]
+      }
+    },
+    {
+      "step_index": 3,
+      "t_offset_sec": 30,
+      "action": "Person A places backpack",
+      "event_type": "object_place",
+      "actor": "person_a",
+      "object": "object_01",
+      "details": {
+        "relation": "placed",
+        "stationary_seconds": 0,
+        "bbox": [
+          150,
+          200,
+          210,
+          280
+        ]
+      }
+    },
+    {
+      "step_index": 4,
+      "t_offset_sec": 50,
+      "action": "Person A leaves",
+      "event_type": "person_exit",
+      "actor": "person_a",
+      "object": null,
+      "details": {
+        "direction": "outbound",
+        "bbox": [
+          300,
+          80,
+          420,
+          360
+        ]
+      }
+    },
+    {
+      "step_index": 5,
+      "t_offset_sec": 110,
+      "action": "backpack becomes unattended",
+      "event_type": "object_unattended",
+      "actor": null,
+      "object": "object_01",
+      "details": {
+        "relation": "unattended",
+        "stationary_seconds": 60,
+        "nearest_person_distance_m": 5.5
+      }
+    },
+    {
+      "step_index": 6,
+      "t_offset_sec": 160,
+      "action": "Person B enters",
+      "event_type": "person_enter",
+      "actor": "person_b",
+      "object": null,
+      "details": {
+        "direction": "inbound",
+        "bbox": [
+          100,
+          80,
+          220,
+          360
+        ]
+      }
+    },
+    {
+      "step_index": 7,
+      "t_offset_sec": 180,
+      "action": "Person B picks backpack",
+      "event_type": "object_pickup",
+      "actor": "person_b",
+      "object": "object_01",
+      "details": {
+        "relation": "picked_up",
+        "bbox": [
+          155,
+          190,
+          215,
+          275
+        ]
+      }
+    },
+    {
+      "step_index": 8,
+      "t_offset_sec": 200,
+      "action": "Person B leaves with backpack",
+      "event_type": "person_exit",
+      "actor": "person_b",
+      "object": "object_01",
+      "details": {
+        "relation": "removed",
+        "direction": "outbound",
+        "carrying": true,
+        "bbox": [
+          320,
+          80,
+          440,
+          360
+        ]
+      }
+    }
+  ]
+}

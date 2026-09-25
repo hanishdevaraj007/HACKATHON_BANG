@@ -1,0 +1,54 @@
+{
+  "_comment": "FROZEN scoring configuration. Do NOT modify these values. See docs/INCIDENT_CONTRACT.md.",
+  "rules": [
+    {
+      "rule_id": "SCORE-001",
+      "rule_name": "unauthorized_zone_access",
+      "points": 25,
+      "description": "Unauthorized access to a restricted zone (level >= 3 without authorization).",
+      "signal_type": "unauthorized_zone_access"
+    },
+    {
+      "rule_id": "SCORE-002",
+      "rule_name": "after_hours_activity",
+      "points": 15,
+      "description": "Activity detected outside the allowed hours for the zone.",
+      "signal_type": "after_hours_activity"
+    },
+    {
+      "rule_id": "SCORE-003",
+      "rule_name": "sensitive_asset_interaction",
+      "points": 20,
+      "description": "Interaction with a sensitive or classified asset.",
+      "signal_type": "sensitive_asset_interaction"
+    },
+    {
+      "rule_id": "SCORE-004",
+      "rule_name": "usb_activity",
+      "points": 15,
+      "description": "USB device insertion or data transfer via USB in a controlled zone.",
+      "signal_type": "usb_activity"
+    },
+    {
+      "rule_id": "SCORE-005",
+      "rule_name": "large_outbound_transfer",
+      "points": 15,
+      "description": "Large outbound network data transfer exceeding policy threshold.",
+      "signal_type": "large_outbound_transfer"
+    },
+    {
+      "rule_id": "SCORE-006",
+      "rule_name": "multi_signal_correlation",
+      "points": 10,
+      "description": "Three or more correlated signals from the same actor within a correlation window.",
+      "signal_type": "multi_signal_correlation"
+    }
+  ],
+  "max_score": 100,
+  "severity_bands": [
+    {"label": "LOW", "min": 0, "max": 29},
+    {"label": "MEDIUM", "min": 30, "max": 59},
+    {"label": "HIGH", "min": 60, "max": 79},
+    {"label": "CRITICAL", "min": 80, "max": 100}
+  ]
+}

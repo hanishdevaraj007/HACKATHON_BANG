@@ -1,0 +1,57 @@
+{
+  "event_id": "11111111-2222-4333-8444-555555555504",
+  "timestamp": "2025-03-15T09:08:00Z",
+  "event_type": "object_pickup",
+  "source": {
+    "source_type": "camera",
+    "source_id": "CAM-Z2-01",
+    "source_name": "Collaboration Area South"
+  },
+  "actor": {
+    "entity_type": "person",
+    "entity_id": "P002",
+    "entity_name": "Bob Martinez",
+    "badge_id": "B-1002",
+    "account_id": "bmartinez",
+    "track_id": "trk_202"
+  },
+  "target": {
+    "entity_type": "zone",
+    "entity_id": "Z2",
+    "entity_name": "Collaboration Area"
+  },
+  "object": {
+    "object_type": "bag",
+    "object_id": "BAG-001",
+    "object_description": "Black tactical backpack"
+  },
+  "device": {
+    "device_id": "CAM-Z2-01",
+    "device_type": "camera",
+    "device_name": "Collab Camera 01",
+    "ip_address": "10.0.2.10",
+    "mac_address": "00:1A:2B:3C:4D:21"
+  },
+  "location": {
+    "zone_id": "Z2",
+    "zone_name": "Collaboration Area",
+    "building": "Main Campus",
+    "floor": "1",
+    "coordinates": {
+      "x": 18.2,
+      "y": 14.0
+    }
+  },
+  "attributes": {
+    "detection_class": "backpack",
+    "action": "picked_up",
+    "bbox": [
+      155,
+      190,
+      215,
+      275
+    ]
+  },
+  "confidence": 0.86,
+  "raw_ref": "frames/cam_z2_01/frame_00720.jpg"
+}

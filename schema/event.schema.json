@@ -1,0 +1,191 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://meridian-security/schema/event.schema.json",
+  "title": "Normalized Security Event",
+  "description": "Canonical event schema for the Multi-Modal Security Event Correlation Platform. ALL source processors must emit events conforming to this schema. See docs/EVENT_CONTRACT.md for full documentation.",
+  "type": "object",
+  "required": [
+    "event_id",
+    "timestamp",
+    "event_type",
+    "source"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "description": "Globally unique event identifier. Format: UUID v4.",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 UTC timestamp of when the event occurred."
+    },
+    "event_type": {
+      "type": "string",
+      "description": "Canonical event type identifier.",
+      "enum": [
+        "person_enter",
+        "person_exit",
+        "object_place",
+        "object_pickup",
+        "object_unattended",
+        "badge_swipe",
+        "login_success",
+        "login_failure",
+        "usb_insert",
+        "usb_remove",
+        "file_access",
+        "network_transfer",
+        "door_open",
+        "door_close",
+        "policy_violation"
+      ]
+    },
+    "source": {
+      "type": "object",
+      "description": "The system or sensor that generated this event.",
+      "required": ["source_type", "source_id"],
+      "properties": {
+        "source_type": {
+          "type": "string",
+          "enum": ["camera", "badge_reader", "endpoint_agent", "network_monitor", "access_control", "identity_provider"]
+        },
+        "source_id": {
+          "type": "string",
+          "description": "Unique identifier for the specific source device/system."
+        },
+        "source_name": {
+          "type": ["string", "null"],
+          "description": "Human-readable name for the source."
+        }
+      }
+    },
+    "actor": {
+      "type": ["object", "null"],
+      "description": "The entity performing the action. Nullable when actor is unknown (e.g., unidentified person on camera).",
+      "properties": {
+        "entity_type": {
+          "type": "string",
+          "enum": ["person", "account", "device", "service", "unknown"]
+        },
+        "entity_id": {
+          "type": ["string", "null"],
+          "description": "Known identifier for the actor. Null if unresolved."
+        },
+        "entity_name": {
+          "type": ["string", "null"],
+          "description": "Human-readable name. Null if unknown."
+        },
+        "badge_id": {
+          "type": ["string", "null"],
+          "description": "Associated badge ID if applicable."
+        },
+        "account_id": {
+          "type": ["string", "null"],
+          "description": "Associated account/username if applicable."
+        },
+        "track_id": {
+          "type": ["string", "null"],
+          "description": "Camera tracking ID for visual correlation. NOT biometric."
+        }
+      }
+    },
+    "target": {
+      "type": ["object", "null"],
+      "description": "The entity being acted upon. Nullable.",
+      "properties": {
+        "entity_type": {
+          "type": "string",
+          "enum": ["zone", "device", "file", "network_resource", "door", "workstation", "server", "asset"]
+        },
+        "entity_id": {
+          "type": ["string", "null"]
+        },
+        "entity_name": {
+          "type": ["string", "null"]
+        }
+      }
+    },
+    "object": {
+      "type": ["object", "null"],
+      "description": "Physical or digital object involved in the event. Nullable.",
+      "properties": {
+        "object_type": {
+          "type": "string",
+          "enum": ["usb_device", "laptop", "phone", "badge", "document", "bag", "package", "file", "unknown"]
+        },
+        "object_id": {
+          "type": ["string", "null"]
+        },
+        "object_description": {
+          "type": ["string", "null"]
+        }
+      }
+    },
+    "device": {
+      "type": ["object", "null"],
+      "description": "The device context for this event. Nullable.",
+      "properties": {
+        "device_id": {
+          "type": "string"
+        },
+        "device_type": {
+          "type": "string",
+          "enum": ["camera", "badge_reader", "workstation", "server", "switch", "firewall", "access_point"]
+        },
+        "device_name": {
+          "type": ["string", "null"]
+        },
+        "ip_address": {
+          "type": ["string", "null"]
+        },
+        "mac_address": {
+          "type": ["string", "null"]
+        }
+      }
+    },
+    "location": {
+      "type": ["object", "null"],
+      "description": "Physical or logical location. Nullable.",
+      "properties": {
+        "zone_id": {
+          "type": "string",
+          "description": "References a zone_id from the zone configuration."
+        },
+        "zone_name": {
+          "type": ["string", "null"]
+        },
+        "building": {
+          "type": ["string", "null"]
+        },
+        "floor": {
+          "type": ["string", "null"]
+        },
+        "coordinates": {
+          "type": ["object", "null"],
+          "properties": {
+            "x": { "type": "number" },
+            "y": { "type": "number" }
+          }
+        }
+      }
+    },
+    "attributes": {
+      "type": ["object", "null"],
+      "description": "Event-type-specific attributes. Schema varies by event_type. See docs/EVENT_CONTRACT.md for per-type attribute schemas.",
+      "additionalProperties": true
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "description": "Confidence score from the source processor. 1.0 = deterministic (e.g., badge swipe). Lower values for CV detections."
+    },
+    "raw_ref": {
+      "type": ["string", "null"],
+      "description": "Optional reference to raw source data (frame path, log line, packet capture). For evidence chain."
+    }
+  },
+  "additionalProperties": false
+}

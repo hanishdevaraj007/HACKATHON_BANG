@@ -1,0 +1,50 @@
+{
+  "event_id": "11111111-2222-4333-8444-555555555509",
+  "timestamp": "2025-03-15T09:12:00Z",
+  "event_type": "usb_insert",
+  "source": {
+    "source_type": "endpoint_agent",
+    "source_id": "WS-Z1-01",
+    "source_name": "Workstation Z1-01"
+  },
+  "actor": {
+    "entity_type": "account",
+    "entity_id": "P001",
+    "entity_name": "Alice Chen",
+    "badge_id": "B-1001",
+    "account_id": "achen",
+    "track_id": null
+  },
+  "target": {
+    "entity_type": "workstation",
+    "entity_id": "WS-Z1-01",
+    "entity_name": "Research Workstation 01"
+  },
+  "object": {
+    "object_type": "usb_device",
+    "object_id": "USB-SN-49102",
+    "object_description": "Kingston DataTraveler 64GB"
+  },
+  "device": {
+    "device_id": "WS-Z1-01",
+    "device_type": "workstation",
+    "device_name": "Workstation Z1-01",
+    "ip_address": "10.0.1.51",
+    "mac_address": "00:1A:2B:3C:4D:61"
+  },
+  "location": {
+    "zone_id": "Z1",
+    "zone_name": "Employee Offices",
+    "building": "Main Campus",
+    "floor": "1",
+    "coordinates": null
+  },
+  "attributes": {
+    "usb_vendor": "Kingston",
+    "usb_serial": "USB-SN-49102",
+    "capacity_gb": 64,
+    "drive_letter": "E:"
+  },
+  "confidence": 1.0,
+  "raw_ref": "sysmon/event_1_usb_sn49102.log"
+}
